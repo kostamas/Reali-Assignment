@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "mixins";
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to right, rgba(168, 255, 120, 0.1), rgba(120, 255, 214, 0.1));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn {
+  @include dimension(auto, 35px);
+  @include flex(center, center);
+  background-color: #090576;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover-opacity:hover {
+  opacity: 0.8;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

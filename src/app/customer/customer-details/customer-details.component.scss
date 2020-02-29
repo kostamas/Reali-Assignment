@@ -1,0 +1,43 @@
+@import "src/mixins";
+
+.customer-details {
+  @include dimension(240px, auto);
+  min-height: 190px;
+  background-color: skyblue;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+
+  .customer-top {
+    @include flex(space-between);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid grey;
+
+    .first-name {
+      margin-bottom: 5px;
+    }
+
+    .first-name, .last-name {
+      @include text-overflow-ellipsis();
+      max-width: 160px;
+    }
+
+    .actions {
+      @include flex();
+
+      .edit-customer {
+        @include dimension(19px, 19px);
+      }
+
+      .delete-customer {
+        @include dimension(21px, 21px);
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .detail {
+    margin-top: 15px;
+  }
+}

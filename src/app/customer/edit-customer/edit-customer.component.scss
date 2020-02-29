@@ -1,0 +1,42 @@
+@import "src/mixins";
+
+.edit-customer-component {
+  padding-top: 50px;
+
+  .customer-form {
+    @include dimension(400px, auto);
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .title {
+      @include text-style(20px, black, bold);
+      margin-bottom: 20px;
+    }
+
+    .mat-form-field {
+      display: block;
+      width: 200px;
+    }
+
+    .buttons {
+      @include flex();
+
+      button {
+        border: none;
+      }
+
+      .btn {
+        margin-right: 10px;
+        width: 80px;
+      }
+    }
+
+    input.ng-invalid {
+      border: red;
+    }
+  }
+}

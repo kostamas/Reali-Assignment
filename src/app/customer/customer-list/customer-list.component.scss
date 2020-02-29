@@ -1,0 +1,12 @@
+@import "src/mixins";
+
+.customer-list-component {
+  @include dimension(100%, auto);
+  @include flex();
+  flex-wrap: wrap;
+  padding: 40px;
+
+  .customer-wrapper {
+    margin: 25px 25px 0 0;
+  }
+}

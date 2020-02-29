@@ -1,0 +1,31 @@
+<div class="edit-customer-component">
+
+  <form class="customer-form" [formGroup]="customerForm" (ngSubmit)="submit()">
+    <div class="title">{{(this.viewType === CUSTOMER_VIEWS.edit ? 'Edit' : 'Add')}} Customer</div>
+
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input (keypress)="numbersOnly($event)" matInput placeholder="Phone" formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input (keypress)="numbersOnly($event)" matInput placeholder="Age" formControlName="age">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Address" formControlName="address">
+    </mat-form-field>
+
+    <div class="buttons">
+      <button class="btn">Save</button>
+      <div class="btn" (click)="cancel()">Cancel</div>
+    </div>
+  </form>
+</div>

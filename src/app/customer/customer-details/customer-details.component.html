@@ -1,0 +1,20 @@
+<div class="customer-details">
+  <div class="customer-top">
+    <div>
+      <div class="first-name">Name: {{customer.firstName}}</div>
+      <div class="last-name">Last Name: {{customer.lastName}}</div>
+    </div>
+
+    <div class="actions">
+      <img class="cursor-pointer hover-opacity edit-customer" src="/assets/icons/edit.png"
+           [routerLink]="['/edit-customer', customer.id]">
+      <img class="cursor-pointer hover-opacity delete-customer" src="/assets/icons/delete.png" (click)="delete()">
+    </div>
+
+  </div>
+
+  <div class="detail">Age: {{customer.age}}</div>
+  <div class="detail">Phone: {{customer.phone}}</div>
+  <div class="detail">Address: {{customer.address}}</div>
+
+</div>
