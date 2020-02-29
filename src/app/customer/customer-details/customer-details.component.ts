@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 import {CustomerService} from '../customer.service';
 import {deleteCustomer} from '../../ngrx/actions/customer.action';
 import {Store} from '@ngrx/store';

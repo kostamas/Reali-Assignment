@@ -1,7 +1,7 @@
 import {createReducer, on} from '@ngrx/store';
 import {addCustomer, editCustomer, deleteCustomer} from '../actions/customer.action';
 import {appState} from '../appState';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 
 const onEditCustomer = (state: ICustomer[], action) => {
   const customerToEdit = state.find(customer => customer.id === action.customer.id);

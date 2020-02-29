@@ -1,4 +1,4 @@
-import {ICustomer} from '../../customer';
+import {ICustomer} from '../../types/customer';
 
 export const appState: ICustomer[] = [
   {firstName: 'Charlie ', lastName: 'Chaplin', age: 32, phone: 123456789, address: 'USA', id: '1'},

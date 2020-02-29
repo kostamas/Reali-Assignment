@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 
 export const addCustomer = createAction('[Customer] Add Customer', props<{ customer: ICustomer }>());
 export const editCustomer = createAction('[Customer] Edit Customer', props<{ customer: ICustomer }>());

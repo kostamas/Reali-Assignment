@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 import {Observable} from 'rxjs';
 import {select, Store} from '@ngrx/store';
 

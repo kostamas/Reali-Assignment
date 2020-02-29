@@ -1,5 +1,5 @@
 import {createSelector} from '@ngrx/store';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 
 export const customers = (state: { customers: ICustomer[] }) => state;
 

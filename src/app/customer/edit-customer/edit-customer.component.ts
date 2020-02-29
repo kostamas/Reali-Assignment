@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
 import {CUSTOMER_VIEWS} from '../customer.const';
 import {CustomerService} from '../customer.service';
-import {ICustomer} from '../../../customer';
+import {ICustomer} from '../../../types/customer';
 import {Store} from '@ngrx/store';
 import {getCustomerById} from '../../ngrx/selectors/customer.selector';
 import {addCustomer, editCustomer} from '../../ngrx/actions/customer.action';
