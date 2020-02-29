@@ -4,9 +4,10 @@ import {FormBuilder, Validators} from '@angular/forms';
 import {CUSTOMER_VIEWS} from '../customer.const';
 import {CustomerService} from '../customer.service';
 import {ICustomer} from '../../../types/customer';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {getCustomerById} from '../../ngrx/selectors/customer.selector';
 import {addCustomer, editCustomer} from '../../ngrx/actions/customer.action';
+import {take} from "rxjs/operators";
 
 @Component({
   selector: 'app-edit-customer',
@@ -32,13 +33,15 @@ export class EditCustomerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(data => this.viewType = data && data.type);
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.data.pipe(take(1)).subscribe(data => this.viewType = data && data.type);
+    this.activatedRoute.params.pipe(take(1)).subscribe(params => {
       if (params.id) {
-        this.store.select(getCustomerById(params.id)).subscribe(customer => {
+        this.store.pipe(take(1), select(getCustomerById(params.id))).subscribe(customer => {
           if (customer) {
             this.customerToEdit = customer;
             this.updateFormByCustomer(customer);
+          } else {
+            this.router.navigate(['/create-customer']);
           }
         });
       }

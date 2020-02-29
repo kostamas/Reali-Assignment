@@ -7,4 +7,5 @@ export const customerRoutes: Routes = [
   {path: 'customers', component: CustomerListComponent},
   {path: 'create-customer', component: EditCustomerComponent, data: {type: CUSTOMER_VIEWS.create}},
   {path: 'edit-customer/:id', component: EditCustomerComponent, data: {type: CUSTOMER_VIEWS.edit}},
+  { path: '**', redirectTo: 'customers', pathMatch: 'full' }
 ];
